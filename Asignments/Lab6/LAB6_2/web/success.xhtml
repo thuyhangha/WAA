@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:panelGrid columns="2" border="0">
+                <h:panelGroup>From: </h:panelGroup>
+                <h:panelGroup><h:outputText value="#{flightManagedBean.from}"></h:outputText></h:panelGroup>
+                
+                <h:panelGroup>To: </h:panelGroup>
+                <h:panelGroup><h:outputText value="#{flightManagedBean.to}"></h:outputText></h:panelGroup>
+                
+                <h:panelGroup>Departure Date: </h:panelGroup>
+                <h:panelGroup><h:outputText value="#{flightManagedBean.departureDate}"></h:outputText></h:panelGroup>
+                
+                <h:panelGroup>Return Date: </h:panelGroup>
+                <h:panelGroup><h:outputText value="#{flightManagedBean.returnDate}"></h:outputText></h:panelGroup>                
+            </h:panelGrid>
+            <h:outputText value="#{flightManagedBean.ticketType}"></h:outputText>
+            <br/>
+            Options: <h:outputText value="#{flightManagedBean.optionsString}"></h:outputText>
+        </f:view> 
+    </h:body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form method="GET" action="PersonListControllerServlet">
+                <input type="submit" value="Show all names"/>
+            </form>            
+        </div>
+        </br>
+        <div>
+            <form method="POST" action="PersonAddControllerServlet">
+                <span>Key=</span><input type="text" name="key"/>
+                <span>First Name=</span><input type="text" name="firstname" />
+                <span>Last Name=</span><input type="text" name="lastname" />
+                <input type="submit" value="Add" />
+            </form>            
+        </div>
+        <div>
+            <form method="POST" action="PersonRemoveControllerServlet">
+                <span>Key=</span><input type="text" name="key" />
+                <input type="submit" value="Remove" />
+            </form>
+            
+        </div>
+    </body>
+</html>
