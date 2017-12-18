@@ -45,3 +45,14 @@ body {
   font-weight : bold;
   text-decoration : underline;
 }
+
+table, th, td {
+                border: 1px solid black;                
+            }
+            td.center{
+                text-align: center;
+            }
+            .fullwidth{
+                width:100%;
+                text-align: left;                
+            }

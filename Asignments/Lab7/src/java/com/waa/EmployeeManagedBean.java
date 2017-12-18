@@ -62,7 +62,7 @@ public class EmployeeManagedBean {
                 
         this.title = selectedName + " Details";      
         
-        return "index";
+        return "employee";
     }
     
     public String showall(){
