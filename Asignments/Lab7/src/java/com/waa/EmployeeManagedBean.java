@@ -47,7 +47,7 @@ public class EmployeeManagedBean {
     public void setSelectedEmployee(Employee selectedEmployee) {
         this.selectedEmployee = selectedEmployee;
     }    
-    public String index(){        
+    public String main(){        
         Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 
         Integer selectedId = Integer.parseInt(params.get("selectedId"));

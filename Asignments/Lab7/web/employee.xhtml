@@ -12,7 +12,7 @@
             <ui:define name="left">
                 <h:dataTable styleClass="fullwidth" value="#{employeeManagedBean.lstEmployee}" var="selectedEmployee">
                     <h:column>
-                        <h:commandLink value="#{selectedEmployee.name}" action="#{employeeManagedBean.index}">                        
+                        <h:commandLink value="#{selectedEmployee.name}" action="#{employeeManagedBean.main}">                        
                             <f:param name="selectedId"  value="#{selectedEmployee.id}" />
                             <f:param name="selectedName"  value="#{selectedEmployee.name}" />
                             <f:param name="selectedPhone"  value="#{selectedEmployee.phone}" />

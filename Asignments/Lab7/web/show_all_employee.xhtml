@@ -10,7 +10,7 @@
     <h:body>
         <ui:composition template="templates/master-detail-template.xhtml">
             <ui:define name="left">
-                <h:commandButton value="Back to Master-Details" action="#{employeeManagedBean.index}">
+                <h:commandButton value="Back to Master-Details" action="#{employeeManagedBean.main}">
                     <f:param name="selectedId"  value="#{employeeManagedBean.selectedEmployee.id}" />
                     <f:param name="selectedName"  value="#{employeeManagedBean.selectedEmployee.name}" />
                     <f:param name="selectedPhone"  value="#{employeeManagedBean.selectedEmployee.phone}" />
