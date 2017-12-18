@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>#{employeeManagedBean.title}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/master-detail-template.xhtml">
+            <ui:define name="left">
+                <h:dataTable styleClass="fullwidth" value="#{employeeManagedBean.lstEmployee}" var="selectedEmployee">
+                    <h:column>
+                        <h:commandLink value="#{selectedEmployee.name}" action="#{employeeManagedBean.index}">                        
+                            <f:param name="selectedId"  value="#{selectedEmployee.id}" />
+                            <f:param name="selectedName"  value="#{selectedEmployee.name}" />
+                            <f:param name="selectedPhone"  value="#{selectedEmployee.phone}" />
+                            <f:param name="selectedSalary"  value="#{selectedEmployee.salary}" />
+                        </h:commandLink>                        
+                    </h:column>                    
+                </h:dataTable>                
+                <h:commandButton value="Show all" action="#{employeeManagedBean.showall}" />   
+            </ui:define>
+            <ui:define name="content">
+                <table class="fullwidth">
+                    <tr>
+                        <td>id</td>
+                        <td>#{employeeManagedBean.selectedEmployee.id}</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>#{employeeManagedBean.selectedEmployee.name}</td>
+                    </tr>
+                    <tr>
+                        <td>phone</td>
+                        <td>#{employeeManagedBean.selectedEmployee.phone}</td>
+                    </tr>
+                    <tr>
+                        <td>salary</td>
+                        <td>#{employeeManagedBean.selectedEmployee.salary}</td>
+                    </tr>
+                </table>  
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
