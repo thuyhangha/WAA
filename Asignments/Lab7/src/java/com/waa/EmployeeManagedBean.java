@@ -48,19 +48,19 @@ public class EmployeeManagedBean {
         this.selectedEmployee = selectedEmployee;
     }    
     public String main(){        
-        Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-
-        Integer selectedId = Integer.parseInt(params.get("selectedId"));
-        String selectedName = params.get("selectedName");
-        String selectedPhone = params.get("selectedPhone");
-        Float selectedSalary = Float.parseFloat(params.get("selectedSalary"));
-        
-        this.selectedEmployee.setId(selectedId);
-        this.selectedEmployee.setName(selectedName);
-        this.selectedEmployee.setPhone(selectedPhone);
-        this.selectedEmployee.setSalary(selectedSalary);
-                
-        this.title = selectedName + " Details";      
+//        Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+//
+//        Integer selectedId = Integer.parseInt(params.get("selectedId"));
+//        String selectedName = params.get("selectedName");
+//        String selectedPhone = params.get("selectedPhone");
+//        Float selectedSalary = Float.parseFloat(params.get("selectedSalary"));
+//        
+//        this.selectedEmployee.setId(selectedId);
+//        this.selectedEmployee.setName(selectedName);
+//        this.selectedEmployee.setPhone(selectedPhone);
+//        this.selectedEmployee.setSalary(selectedSalary);
+//                
+//        this.title = selectedName + " Details";      
         
         return "employee";
     }
