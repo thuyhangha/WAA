@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            .errorMessage{
+                color: red;                
+                margin: 10px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            Brand 
+            <h:inputText id="brand" required="true" requiredMessage="*"
+                         value="#{carManagedBean.brand}">
+                <f:validator validatorId="brandValidator"/>              
+            </h:inputText>
+            <h:message for="brand" styleClass="errorMessage"/>
+            <br/><br/>
+            License nr. 
+            <h:inputText id="license" required="true" requiredMessage="*"
+                         value="#{carManagedBean.license}">
+                <f:validator validatorId="licenceValidator"/>              
+            </h:inputText>
+            <h:message for="license" styleClass="errorMessage"/>
+            <br/><br/>
+            Price 
+            <h:inputText id="price" required="true" requiredMessage="*"
+                         value="#{carManagedBean.price}">
+                <f:validator validatorId="priceValidator"/>              
+            </h:inputText>
+            <h:message for="price" styleClass="errorMessage"/>
+            <br/><br/>
+            <h:commandButton value="Submit" action="#{carManagedBean.submit}"/>
+            <br/>
+        </h:form>
+    </h:body>
+</html>
+
