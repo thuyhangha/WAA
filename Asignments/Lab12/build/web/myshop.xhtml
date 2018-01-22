@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+
+   <h:body>
+        <div style="width: 50%"><h2 style="text-align: center; color: red">CD Shop</h2></div>
+        <h:form>
+            <h:dataTable value="#{productBean.allProducts}" var="p"
+                         border="1" style="border-collapse: separate" cellpadding="3" width="50%">
+                <h:column>
+                    <f:facet name="header"><b>product code</b></f:facet>
+                    #{p.productCode}
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><b>product name</b></f:facet>
+                    #{p.productName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><b>price</b></f:facet>
+                    
+                    <h:outputText value="#{p.price}">
+                        <f:convertNumber pattern="#0.00" locale="en_US"/>
+                    </h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandButton action="#{shoppingCartBean.addToCart}" value="add to cart">
+                        <f:param name="productCode"  value="#{p.productCode}" />
+                        <f:param name="productName"  value="#{p.productName}" />
+                        <f:param name="price"  value="#{p.price}" />
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+            <br/>
+            <h:link outcome="myshoppingcart" value="Show Shoppingcart (#{shoppingCartBean.totalQuantities})"/>
+        </h:form>
+    </h:body>
+</html>
+
+

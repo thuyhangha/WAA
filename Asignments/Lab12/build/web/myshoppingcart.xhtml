@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+
+    <h:body>
+        <div style="width: 50%"><h2 style="text-align: center; color: red">Shoppingcart</h2></div>
+        <h:form>
+            <table border="1" style="border-collapse: separate" cellpadding="3" width="50%">
+                <tr>
+                    <th>product code</th>
+                    <th>product name</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>total price</th>
+                    <th></th>
+                </tr>
+                <c:if test="#{not empty shoppingCartBean.listProduct}">
+                    <ui:repeat value="#{shoppingCartBean.listProduct}" var="item">
+                        <tr>                        
+                            <td>#{item.product.productCode}</td>
+                            <td>#{item.product.productName}</td>
+                            <td>#{item.product.price}</td>
+                            <td>#{item.quantities}</td>
+                            <td>                                
+                                <h:outputText value="#{item.product.price * item.quantities}">
+                                    <f:convertNumber pattern="#0.00" locale="en_US"/>
+                                </h:outputText>
+                            </td>
+                            <td>
+                                <h:commandButton action="#{shoppingCartBean.removeFromCart}" value="remove from cart">
+                                    <f:param name="productCode"  value="#{item.product.productCode}" />                        
+                                </h:commandButton>
+                            </td>
+                        </tr>
+                    </ui:repeat>
+                </c:if>
+                <c:if test="#{empty shoppingCartBean.listProduct}">
+                    <tr>
+                        <td colspan="6"><p style="color:gray; text-align: center;width: 100%">Your cart is empty.</p></td>
+                    </tr>
+                </c:if>
+                <tr>
+                    <td></td>
+                    <td>Total price</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <h:outputText value="#{shoppingCartBean.finalPrice}">
+                            <f:convertNumber pattern="#0.00" locale="en_US"/>
+                        </h:outputText>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <br/>
+            <h:link outcome="myshop" value="Continue shopping"/>
+        </h:form>
+    </h:body>
+</html>
+
+
